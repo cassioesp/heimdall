@@ -64,7 +64,6 @@ class AccessTokenForm extends Component {
 
         const {accessToken, loading, appSource, fetching} = this.props
         const {plans} = this.state
-
         const appAutocompleteSource = appSource.map((app, index) => {
             return <Option key={app.id}>{app.name}</Option>
         })
@@ -129,7 +128,8 @@ class AccessTokenForm extends Component {
                             <FormItem label={i18n.t('plans')}>
                                 {
                                     getFieldDecorator('plans', {
-                                        initialValue: accessToken && accessToken.plans.map(plan => plan.id)
+                                        initialValue: accessToken && accessToken.plans.map(plan => plan.id),
+                                        rules: [{ required: true, message: i18n.t('you_need_select_plan') }]
                                     })(<Checkbox.Group className='checkbox-conductor'>
                                         {plans && plans.map((plan, index) => {
                                             return <Checkbox key={index} value={plan.id}

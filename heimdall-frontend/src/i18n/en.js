@@ -104,6 +104,7 @@ export default {
         'add_access_token': 'Add Access Token',
         'edit_access_token': 'Edit Access Token',
         'you_need_select_app': 'You need select an app',
+        'you_need_select_plan': 'You need select a plan',
         'key': 'Key',
         'value': 'Value',
         'new': 'New',
